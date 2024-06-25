@@ -24,6 +24,6 @@ var submitted = false;
 	    submitBtn.innerHTML = 'Send Message';
  
 	    // Redirect to the home page
-	    window.location.href = '/';
+	    window.location.href = '#';
 	}
     }
