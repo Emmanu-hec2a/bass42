@@ -646,14 +646,14 @@ input, select, textarea {
 
 		.image:before {
 			pointer-events: none;
-			background-image: url("../../images/overlay.png");
+			background-image: url("/images/header.jpg");
 			background-color: rgba(19, 21, 25, 0.5);
 			border-radius: 4px;
 			content: '';
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.5;
+			opacity: 0.1;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -921,7 +921,8 @@ input, select, textarea {
 			}
 
 				ul.icons li a:hover {
-					background-color: rgba(255, 255, 255, 0.075);
+					color: aqua;
+					background-color: darkblue;
 				}
 
 				ul.icons li a:active {
@@ -1139,10 +1140,11 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../mages/header.jpg");
+			
+			background-size: auto, 256px 256px;
+			background-position: center, center;
+			background-repeat: no-repeat, no-repeat;
 			z-index: 2;
 		}
 
@@ -1155,11 +1157,12 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/gate.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
 			z-index: 1;
+			
 		}
 
 		body.is-article-visible #bg:after {
@@ -1653,6 +1656,51 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+		.circular-image {
+			width: auto; /* Adjust the size as needed */
+			height: auto; /* Adjust the size as needed */
+			border-radius: 100%;
+			object-fit: cover; /* Ensures the image covers the area */
+			border: 2px solid #fff; /* Optional: Add a border */
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow */
+		  }
+		  
+
 		body.is-preload #footer {
 			opacity: 0;
 		}
+		.two-columns {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch; /* Make sure columns align properly */
+		  }
+		  
+		  .column {
+			flex: 1; /* Each column takes equal space */
+			padding: 20px;
+			background-color: none;
+		  }
+		  
+		  .separator {
+			width: 1px; /* The line width */
+			background-color: #000; /* Line color */
+			margin: 0 20px; /* Space around the line */
+		  }
+		  .video-container {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 aspect ratio */
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+			background: #000;
+		  }
+		  
+		  .video-container iframe, .video-container video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		  }
+		  
+		  
