@@ -9,7 +9,10 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-
+			<audio id="audio-player" controls autoplay loop>
+				<source id="audio-source" src="music.mp3" type="audio/mpeg">
+				<!-- Your browser does not support the audio element. -->
+			</audio>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -24,6 +27,7 @@
 								<!-- <h4>Motto</h4><p>Empowerment and Service</p> -->
 								<!-- <h4>School address</h4> -->
 								<p>P.O Box 169-40100 Kisumu, Kenya</p>
+								<button onclick="toggleMusic()">Mute/Unmute</button>
 								<!-- <p>Fully designed by <a href="#">&copyBASS2024</a> and released<br /> -->
 								<!-- by <a href="#">@BASS</a>.</p> -->
 							</div>
@@ -724,12 +728,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	<script>
 		alert(' Hello Mate😊, This website is still under development, please provide any valid/correct/relevant information to be added/corrected in this site through the contact form. Press "OK" to proceed viewing it.');
+		function toggleMusic() {
+            		var audioPlayer = document.getElementById('audio-player');
+            		if (audioPlayer.muted) {
+               			 audioPlayer.muted = false;  // Unmute
+           		} else {
+                		audioPlayer.muted = true;  // Mute
+            		}
+       	 	}
 		var submitted = false;
  
  			function formSubmitted(event) {
  				submitted = true;
 
- // Change button to 'Sending' state
+ 			// Change button to 'Sending' state
  			var submitBton = document.getElementById('submitBton');
  				submitBton.disabled = true; // Disable the button to prevent multiple submissions
  				submitBton.value = 'Submitting...';
@@ -745,10 +757,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	 			if (submitted) {
 		 			submitted = false; // Reset the flag
 
-	 // Alert the user
+	 				// Alert the user
 		 			alert('Hello Alumni, Your details have been successfully submitted.');
 
-	 // Reset the button to its original state
+	 				// Reset the button to its original state
 		 			var submitBton = document.getElementById('submitBton');
 						submitBton.disabled = false; // Re-enable the button
 						submitBton.value = 'Submit';
@@ -762,11 +774,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						document.querySelector('form').reset();
 
 
-	 // Redirect to the home page
+	 				// Redirect to the home page
 	 				window.location.href = '#';
 	 			}
  			}
-			</script>
+		</script>
 
 	</body>
 </html>
