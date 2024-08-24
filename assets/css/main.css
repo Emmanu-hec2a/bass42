@@ -1702,5 +1702,17 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 		  }
-		  
+		  .playlist {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+		  }
+		  .playlist li {
+				margin: 5px 0;
+		  }
+		  .playlist li a {
+				text-decoration: none;
+				color: darkblue;
+				cursor: pointer;
+		  }
 		  

@@ -10,6 +10,18 @@
 	</head>
 	<body class="is-preload">
 
+		
+			<audio id="audio-player" controls autoplay loop>
+				<source id="audio-source" src="music.mp3" type="audio/mpeg">
+				<!-- Your browser does not support the audio element. -->
+			</audio>
+			
+			<!-- Rest of your website content -->
+			
+			<!-- Optionally: A mute/unmute button -->
+
+		
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -24,6 +36,14 @@
 								<!-- <h4>Motto</h4><p>Empowerment and Service</p> -->
 								<!-- <h4>School address</h4> -->
 								<p>P.O Box 169-40100 Kisumu, Kenya</p>
+								<!-- Next, Pause/Play, and Previous Buttons -->
+								<!-- <div class="audio-controls">
+									<button id="previousBtn" onclick="previousSong()">Previous</button>
+									<button id="pausePlayBtn" onclick="togglePlayPause()">Pause</button>
+									<button id="nextBtn" onclick="nextSong()">Next</button>
+								</div> -->
+
+								<button onclick="toggleMusic()">Mute/Unmute</button>
 								<!-- <p>Fully designed by <a href="#">&copyBASS2024</a> and released<br /> -->
 								<!-- by <a href="#">@BASS</a>.</p> -->
 							</div>
@@ -50,7 +70,7 @@
 						<!-- Intro -->
 							<article id="about">
 								<h2 class="major" style="color: darkblue;">Intro</h2>
-								<span class="image main" style="display: flex;"><img src="/images/gate.jpg" alt="" /></span>
+								<span class="image main" style="display: flex;"><img src="gate.jpg" alt="" /></span>
 								<p>The school was established in the {year}, having a rich history and heritage spanning quite many years and the foundation is rooted in a vision to provide quality education and contribute positively to the society.</p>
 								<div>
 									<h4>School Geographical Location</h4>
@@ -126,7 +146,7 @@
 						<!-- Academics -->
 							<article id="academics">
 								<h2 class="major" style="color: darkblue;">Academics</h2>
-								<span class="image main"><img src="/images/header.jpg" alt="" /></span>
+								<span class="image main"><img src="header.jpg" alt="" /></span>
 								<p></p>
 								<h3>Curriculum</h3>
 								<h4>Academic Structure</h4>
@@ -357,38 +377,38 @@
 									<section>
 										<div>
 											<h4 class="major"><b>Bishop Abiero Staff Choir</b></h4>
-											<span class="image main" style="display:flex;" ><img src="/images/staff-choir.jpg"/></span>
+											<span class="image main" style="display:flex;" ><img src="staff-choir.jpg"/></span>
 										</div><br>
 										<p>________________________________________________________</p>
 										<div>
 											<h4 class="major">Image of Bishop Charles Onginjo</h4>
-											<span class="image main" style="display:flex;"><img src="/images/Bishop-Charles-Onginjo.jpg"/></span>
+											<span class="image main" style="display:flex;"><img src="Bishop-Charles-Onginjo.jpg"/></span>
 										</div>
 										<p>_________________________________________________________</p>
 										<div>
 											<h4 class="major">The Great Debate Contest BASS vs Oyoo school</h4>
 											<u style="color: aqua;"><a href="https://youtu.be/0nR9Invorgk?si=GL9BodW4SzDgFYlP" target="_blank">
-												<img src="/images/thumbnail.jpg" alt="Video Thumbnail" style="width: 75%;"><br>Watch
+												<img src="thumbnail.jpg" alt="Video Thumbnail" style="width: 75%;"><br>Watch
 											</a></u>										  
 										</div>
 										<p>________________________________________________________</p>
 										<div>
 											<h4 class="major">Class reps form 3 Champions (2022)</h4>
-											<span class="image main" style="display: flex;"><img src="/images/council.jpeg"/></span>
+											<span class="image main" style="display: flex;"><img src="council.jpeg"/></span>
 										</div>
 										<p>________________________________________________________</p>
 										<div>
 											<h4 class="major">Side View</h4>
-											<span class="image main" style="display: flex;"><img src="/images/outside.jpg"/></span>
+											<span class="image main" style="display: flex;"><img src="outside.jpg"/></span>
 										</div>
 										<div>
 											<h4 class="major"><b>Image of Block A classroom</b></h4>
-											<span class="image main" style="display:flex;"><img src="/images/BlockA.jpg"/></span>
+											<span class="image main" style="display:flex;"><img src="BlockA.jpg"/></span>
 										</div><br>
 										<p>_________________________________________________________</p>
 										<div>
 											<h4 class="major"><b>Image of Block B classroom</b></h4>
-											<span class="image main" style="display: flex; height:fit-content;"><img src="/images/BlockB.jpg"/></span>
+											<span class="image main" style="display: flex; height:fit-content;"><img src="BlockB.jpg"/></span>
 										</div>
 									</section>
 								</div>
@@ -724,6 +744,72 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	<script>
 		alert(' Hello Mate😊, This website is still under development, please provide any valid/correct/relevant information to be added/corrected in this site through the contact form. Press "OK" to proceed viewing it.');
+
+        // var playlist = [
+        //     "music.mp3",
+        //     "music1.mp3",
+        //     "music.mp3"
+        // ];
+
+        // var currentSongIndex = 0;
+        // var isPlaying = true;
+
+        // // Function to load a song
+        // function loadSong(index) {
+        //     var audioPlayer = document.getElementById('audio-player');
+        //     var audioSource = document.getElementById('audio-source');
+            
+        //     currentSongIndex = index;
+        //     audioSource.src = playlist[currentSongIndex];  // Set new song source
+        //     audioPlayer.load();  // Load the new song
+        //     audioPlayer.play();  // Play the new song
+        //     isPlaying = true;
+        //     document.getElementById('pausePlayBtn').innerHTML = 'Pause';  // Reset button to 'Pause'
+        // }
+
+        // // Function to play the next song
+        // function nextSong() {
+        //     currentSongIndex++;
+        //     if (currentSongIndex >= playlist.length) {
+        //         currentSongIndex = 0;  // Loop back to the first song if at the end
+        //     }
+        //     loadSong(currentSongIndex);
+        // }
+
+        // // Function to play the previous song
+        // function previousSong() {
+        //     currentSongIndex--;
+        //     if (currentSongIndex < 0) {
+        //         currentSongIndex = playlist.length - 1;  // Loop back to the last song if at the beginning
+        //     }
+        //     loadSong(currentSongIndex);
+        // }
+
+        // // Function to toggle Play and Pause
+        // function togglePlayPause() {
+        //     var audioPlayer = document.getElementById('audio-player');
+        //     var pausePlayBtn = document.getElementById('pausePlayBtn');
+            
+        //     if (isPlaying) {
+        //         audioPlayer.pause();  // Pause the music
+        //         pausePlayBtn.innerHTML = 'Play';  // Change button to 'Play'
+        //         isPlaying = false;
+        //     } else {
+        //         audioPlayer.play();  // Play the music
+        //         pausePlayBtn.innerHTML = 'Pause';  // Change button to 'Pause'
+        //         isPlaying = true;
+        //     }
+        // }
+
+        // Function to toggle background music mute/unmute
+        function toggleMusic() {
+            var audioPlayer = document.getElementById('audio-player');
+            if (audioPlayer.muted) {
+                audioPlayer.muted = false;  // Unmute
+            } else {
+                audioPlayer.muted = true;  // Mute
+            }
+        }
 		var submitted = false;
  
  			function formSubmitted(event) {
@@ -767,6 +853,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	 			}
  			}
 			</script>
-
+		
 	</body>
 </html>
