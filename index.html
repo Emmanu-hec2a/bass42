@@ -12,7 +12,7 @@
 
 		
 			<audio id="audio-player" controls autoplay loop>
-				<source id="audio-source" src="music.mp3" type="audio/mpeg">
+				<source id="audio-source" src="/images/music.mp3" type="audio/mpeg">
 				<!-- Your browser does not support the audio element. -->
 			</audio>
 			
@@ -42,14 +42,19 @@
 									<button id="pausePlayBtn" onclick="togglePlayPause()">Pause</button>
 									<button id="nextBtn" onclick="nextSong()">Next</button>
 								</div> -->
-
-								<button onclick="toggleMusic()">Mute/Unmute</button>
+								<div>
+									<button onclick="toggleMusic()">Mute/Unmute</button><br>
+								</div>
+								<div>
+									<!-- <button><a href="#support">Donate</a></button> -->
+								</div>
+								<!-- <button onclick="toggleMusic()">Mute/Unmute</button> -->
 								<!-- <p>Fully designed by <a href="#">&copyBASS2024</a> and released<br /> -->
 								<!-- by <a href="#">@BASS</a>.</p> -->
 							</div>
 						</div>
 						<nav>
-							<ul>
+							<ul style="color: whitesmoke">
 								<li><a href="#about">About</a></li>
 								<li><a href="#admin">Admin</a></li>
 								<li><a href="#academics">Academics</a></li>
@@ -67,19 +72,44 @@
 				<!-- Main -->
 					<div id="main">
 
+						<article id="support">
+							<h2 class="major" style="color: aqua;">Support Form</h2>
+							<form id="supportForm">
+								<div class="fields">
+								  <div class="field half">
+									<label for="name">Full Name</label>
+									<input type="text" name="name" id="name" placeholder="Your Full Name" required>
+								  </div>
+								  <div class="field half">
+									<label for="phone">MPesa Phone Number</label>
+									<input type="text" name="phone" id="phone" placeholder="MPesa Number" required>
+								  </div>
+								  <div class="field">
+									<label for="amount">Contribution Amount (KES)</label>
+									<input style="color: black;" type="number" name="amount" id="amount" placeholder="Amount" required>
+								  </div>
+								  <ul class="actions">
+									<li><input type="button" value="Contribute" class="primary" onclick="sendMpesaPayment()"/></li>
+									<li><input type="reset" value="Reset" /></li>
+								  </ul>
+								</div>
+							  </form>
+							  
+						</article>
+
 						<!-- Intro -->
 							<article id="about">
-								<h2 class="major" style="color: darkblue;">Intro</h2>
+								<h2 class="major" style="color: aqua;">Intro</h2>
 								<span class="image main" style="display: flex;"><img src="gate.jpg" alt="" /></span>
 								<p>The school was established in the {year}, having a rich history and heritage spanning quite many years and the foundation is rooted in a vision to provide quality education and contribute positively to the society.</p>
 								<div>
-									<h4>School Geographical Location</h4>
+									<h4 class="major">School Geographical Location</h4>
 									<p>The school is located in Kisumu Cental, near Winam in Shaurimoyo Opposite Shaurimoyo ACK church.</p>
 
-									<h4>School address</h4>
+									<h4 class="major">School address</h4>
 									<p>P.O Box 169-40100 Kisumu, Kenya</p>
 								</div>
-								<h2 class="major" style="color: darkblue;">Core Values</h2>
+								<h2 class="major" style="color: aqua;">Core Values</h2>
 								<p>The school uphold a set of core values which includes: </p>
 								<ul>
 									<!-- <h3>Core Values</h3>
@@ -90,17 +120,17 @@
 									<li>Innovation</li>
 									<li>Respect</li>
 								</ul>
-								<h4>Motto</h4><p>Empowerment and Service</p>
+								<h4 class="major">Motto:</h4><p>Empowerment and Service</p>
 								<!-- <ul>
 									<li></li>
 								</ul> -->
 
-								<h4>Vision</h4><p>To be a center of excellence providing universal holistic and utilitarian education for societal development.</p>
+								<h4 class="major">Vision</h4><p>To be a center of excellence providing universal holistic and utilitarian education for societal development.</p>
 								<!-- <ul>
 									<li>Empowering knowledge and Excellence</li>
 								</ul> -->
 
-								<h4>Mission</h4><p>To provide a condusive environment for optimal acquisition of knowledge, skills and attitude that produce an innovative vasertile and programatic individuals.</p>
+								<h4 class="major">Mission</h4><p>To provide a condusive environment for optimal acquisition of knowledge, skills and attitude that produce an innovative vasertile and programatic individuals.</p>
 								<!-- <ul>
 									<li>Empowering knowledge and Excellence</li>
 								</ul> -->
@@ -109,14 +139,14 @@
 
 						<!-- Administration -->
 							<article id="admin">
-								<h2 class="major" style="color: darkblue;">Administration</h2>
+								<h2 class="major" style="color: aqua;">Administration</h2>
 								<!-- <span class="image main"><img src="/images/bgn.jpg" alt="" /></span> -->
 								<p>The school is headed by Principal together with two deputies responsible for overal management, administration and academic perfomance of the school.</p> 
 								<!-- <h4>The Principal</h4> -->
 								<div class="two-columns">
 									<div class="row justify-content-evenly">
 										<div class="column">
-											<h4>Principal</h4>
+											<h4 class="major">Principal</h4>
 											<!-- <span class="image main"><img src="#" alt="img"/></span> -->
 											<p>Name: Mrs.Dinna Oboro<br>
 											Subjects teaching: History&Government and C.R.E
@@ -124,7 +154,7 @@
 										</div>
 
 										<div>
-											<h4>Deputy Principle Academics</h4>
+											<h4 class="major">Deputy Principle Academics</h4>
 											<!-- <span class="image main"><img src="#" alt="img"/></span> -->
 											<p>Name: Mr.Elijah Mong'are<br>
 											Subjects teaching: Geography & Business Studies
@@ -133,7 +163,7 @@
 										<div class="seperator"></div>
 
 										<div class="column">
-											<h4>Deputy Principal Administration</h4>
+											<h4 class="major">Deputy Principal Administration</h4>
 											<!-- <span class="image main"><img src="#" alt="img"/></span> -->
 											<p>Name: Mr.Tom Oduka<br>
 											Subjects teaching: Geography and Mathematics
@@ -145,7 +175,7 @@
 
 						<!-- Academics -->
 							<article id="academics">
-								<h2 class="major" style="color: darkblue;">Academics</h2>
+								<h2 class="major" style="color: aqua;">Academics</h2>
 								<span class="image main"><img src="header.jpg" alt="" /></span>
 								<p></p>
 								<h3>Curriculum</h3>
@@ -161,17 +191,17 @@
 										<li>Research Club</li>
 									</ul>
 								
-								<h3 class="major" style="color: darkblue;">Subjects and Areas of study</h3>
+								<h3 class="major" style="color: aqua;">Subjects and Areas of study</h3>
 								<div class="two-columns">
 									<ul>
 										<div class="column">
-											<h4>Languages</h4>
+											<h4 class="major">Languages</h4>
 												<p>Currently, the school offers three languages: </p>
 												<li>English</li>
 												<li>French</li>
 												<li>Kiswahili</li><br>
 
-											<h4>Sciences</h4>
+											<h4 class="major">Sciences</h4>
 												<li>Mathematics</li>
 												<li>Chemistry</li>
 												<li>Biology</li>
@@ -181,12 +211,12 @@
 										<div class="seperator"></div>
 										<div class="column">
 
-											<h4>Humanities</h4>
+											<h4 class="major">Humanities</h4>
 								 				<li>Geography</li>
 												<li>History & Government</li>
 												<li>Christian Religious Education(C.R.E)</li><br>
 											
-											<h4>Technical Subjects</h4>
+											<h4 class="major">Technical Subjects</h4>
 												<li>Agriculture</li>
 												<li>Home Science</li>
 												<li>Business Studies</li>
@@ -199,7 +229,7 @@
 
 							<!-- Staff Members -->
 							<article id="staff">
-								<h2 class="major" style="color: darkblue;">Staff Members</h2>
+								<h2 class="major" style="color: aqua;">Staff Members</h2>
 								<!-- <span class="circula-image"><img src="/images/m.jpg" alt="" /></span> -->
 								<p>The school has a team of highly qualified and experienced teaching staff who are experts in their respective subjects or field.</p>
 								<div class="field half">
@@ -296,7 +326,7 @@
 							
 							<!--Student Council-->
 							<article id="council">
-								<h3 class="major" style="color: darkblue;">Students Council</h3>
+								<h3 class="major" style="color: aqua;">Students Council</h3>
 								<div>
 									<h4 class="major">School President</h4>
 									<P>Name: ...<br>
@@ -356,7 +386,7 @@
 
 							<!--Announcements-->
 							<article id="announcements">
-								<h2 class="major" style="color: darkblue;">Announcements</h2>
+								<h2 class="major" style="color: aqua;">Announcements</h2>
 								<p>Hello👋,<br>Welcome To Announcement Section</p>
 								<section>
 									<h3>Academics</h3>
@@ -372,7 +402,7 @@
 
 							<!--School Gallery-->
 							<article id="gallery">
-								<h3 class="major" style="color: darkblue;">Gallery</h3>
+								<h3 class="major" style="color: aqua;">Gallery</h3>
 								<div class="field half">
 									<section>
 										<div>
@@ -416,7 +446,7 @@
 
 							<!--Alumni Portal-->
 							<article id="alumni">
-								<h2 class="major" style="color: darkblue;">BASS Alumni</h2>
+								<h2 class="major" style="color: aqua;">BASS Alumni</h2>
 							    <form method="post" action="https://script.google.com/macros/s/AKfycby2a7vo1axgl71RNhdgWEHFmA6JeOuD30RbYXuwrRJJzp_rOY3EBe_Mt7A4T6VHWVmt/exec" target="hidden_iframe" onsubmit="formSubmitted(event);">
 									<div class="fields">
 										<div class="field half">
@@ -446,7 +476,7 @@
 
 						<!-- Contact -->
 							<article id="contact">
-								<h2 class="major" style="color: darkblue;">Contact</h2>
+								<h2 class="major" style="color: aqua;">Contact</h2>
 								<form method="post" action="https://script.google.com/macros/s/AKfycbyh3bOGZsb58k2B5EifOPv3ftGt7Zcu8xfRpGFQroKc3EvhYx9bAOVEjr6b4PzucW3c1A/exec" target="hidden_iframe" onsubmit="formSubmitted(event);">
 									<div class="fields">
 										<div class="field half">
@@ -745,61 +775,31 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script>
 		alert(' Hello Mate😊, This website is still under development, please provide any valid/correct/relevant information to be added/corrected in this site through the contact form. Press "OK" to proceed viewing it.');
 
-        // var playlist = [
-        //     "music.mp3",
-        //     "music1.mp3",
-        //     "music.mp3"
-        // ];
+		function sendMpesaPayment() {
+			const phone = document.getElementById('phone').value;
+			const amount = document.getElementById('amount').value;
 
-        // var currentSongIndex = 0;
-        // var isPlaying = true;
+			fetch('/process-mpesa-payment', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					phone: phone,
+					amount: amount
+				})
+			})
+			.then(response => response.json())
+			.then(data => {
+				if (data.success) {
+					alert('Payment initiated, please complete it on your phone.');
+				} else {
+					alert('Error initiating payment.');
+				}
+			})
+			.catch(error => console.error('Error:', error));
+		}
 
-        // // Function to load a song
-        // function loadSong(index) {
-        //     var audioPlayer = document.getElementById('audio-player');
-        //     var audioSource = document.getElementById('audio-source');
-            
-        //     currentSongIndex = index;
-        //     audioSource.src = playlist[currentSongIndex];  // Set new song source
-        //     audioPlayer.load();  // Load the new song
-        //     audioPlayer.play();  // Play the new song
-        //     isPlaying = true;
-        //     document.getElementById('pausePlayBtn').innerHTML = 'Pause';  // Reset button to 'Pause'
-        // }
-
-        // // Function to play the next song
-        // function nextSong() {
-        //     currentSongIndex++;
-        //     if (currentSongIndex >= playlist.length) {
-        //         currentSongIndex = 0;  // Loop back to the first song if at the end
-        //     }
-        //     loadSong(currentSongIndex);
-        // }
-
-        // // Function to play the previous song
-        // function previousSong() {
-        //     currentSongIndex--;
-        //     if (currentSongIndex < 0) {
-        //         currentSongIndex = playlist.length - 1;  // Loop back to the last song if at the beginning
-        //     }
-        //     loadSong(currentSongIndex);
-        // }
-
-        // // Function to toggle Play and Pause
-        // function togglePlayPause() {
-        //     var audioPlayer = document.getElementById('audio-player');
-        //     var pausePlayBtn = document.getElementById('pausePlayBtn');
-            
-        //     if (isPlaying) {
-        //         audioPlayer.pause();  // Pause the music
-        //         pausePlayBtn.innerHTML = 'Play';  // Change button to 'Play'
-        //         isPlaying = false;
-        //     } else {
-        //         audioPlayer.play();  // Play the music
-        //         pausePlayBtn.innerHTML = 'Pause';  // Change button to 'Pause'
-        //         isPlaying = true;
-        //     }
-        // }
 
         // Function to toggle background music mute/unmute
         function toggleMusic() {
