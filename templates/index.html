@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bishop Abiero Shaurimoyo Secondary School</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}">
+  <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+        <div class="school-name">
+                <div class="logo">
+                    <!--div class="logo-icon">🎓</div-->
+                    <div class="logo-text">
+                        <h1 class="long-name">BISHOP ABIERO SHAURIMOYO</h1>
+                        <h1 class="short-name">BISHOP ABIERO SHAURIMOYO</h1>
+                        <p>Secondary School</p>
+                    </div>
+                </div>
+        </div>
+      
+      <div class="nav-section">
+        <nav id="nav-menu">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#staff">Staff</a></li>
+            <li><a href="#admin">Admin</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#announcement">News</a></li>
+            <li><a href="{{ url_for('support') }}">Support</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="{{ url_for('admin') }}">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><span>☰</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Empowerment and Service</h2>
+      <p>Excellence in education, nurturing future leaders with integrity, innovation, and respect</p>
+      <div class="cta-buttons">
+        <a href="#about" class="btn btn-primary">Learn More</a>
+        <a href="{{ url_for('support') }}" class="btn btn-secondary">Support Us</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <h2>About Our School</h2>
+        <p>A prestigious institution dedicated to academic excellence and character development</p>
+      </div>
+      
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To provide a conducive environment for optimal acquisition of knowledge, skills, and values that prepare students for life challenges and opportunities.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🌟</div>
+          <h3>Our Vision</h3>
+          <p>To be a center of excellence providing universal holistic and utilitarian education that transforms lives and communities.</p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">💎</div>
+          <h3>Core Values</h3>
+          <p><strong>Integrity</strong> • <strong>Academic Excellence</strong> • <strong>Discipline</strong> • <strong>Innovation</strong> • <strong>Respect</strong></p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>500+</h3>
+            <p>Students Enrolled</p>
+          </div>
+          <div class="stat-item">
+            <h3>20+</h3>
+            <p>Qualified Teachers</p>
+          </div>
+          <div class="stat-item">
+            <h3>10+</h3>
+            <p>Subject Areas</p>
+          </div>
+          <div class="stat-item">
+            <h3>5+</h3>
+            <p>Active Clubs</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Administration Section -->
+    <section id="admin">
+      <div class="section-header">
+        <h2>School Administration</h2>
+        <p>Experienced leadership committed to educational excellence</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <!--div class="card-icon">👨‍💼</div-->
+          <h3>Principal</h3>
+          <p><strong>Mr. Oguta Kennedy</strong><br>
+             Subject: English Literature and BST<br>
+             Leading with vision and integrity</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👨‍💻</div>
+          <h3>Deputy Principal (Admin)</h3>
+          <p><strong>Mr. Okello Nicholas</strong><br>
+             Subjects: Geography & Mathematics<br>
+             Managing school operations</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👩‍🏫</div>
+          <h3>Deputy Principal (Academics)</h3>
+          <p><strong>Mrs. Kerubo Miriam Nyabira</strong><br>
+             Subjects: Kiswahili & C.R.E<br>
+             Overseeing academic excellence</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📋</div>
+          <h3>School Secretary</h3>
+          <p><strong>Mrs. Ondego Everlyne</strong><br>
+             Administrative support and coordination</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💰</div>
+          <h3>School Bursar</h3>
+          <p><strong>Osoro Allance</strong><br>
+             Financial management and oversight</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics">
+      <div class="section-header">
+        <h2>Academic Excellence</h2>
+        <p>Comprehensive curriculum designed to prepare students for the future</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📚</div>
+          <h3>Languages</h3>
+          <p><strong>English Literature</strong><br>
+             <strong>Kiswahili</strong><br>
+             <!--strong>French</strong></p-->
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔬</div>
+          <h3>Sciences</h3>
+          <p><strong>Mathematics</strong> (Compulsory)<br>
+             <strong>Chemistry</strong> (Compulsory)<br>
+             <strong>Biology</strong> (Compulsory)<br>
+             <strong>Physics</strong></p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌍</div>
+          <h3>Humanities</h3>
+          <p><strong>Geography</strong><br>
+             <strong>History & Government</strong><br>
+             <strong>Christian Religious Education</strong></p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">💼</div>
+          <h3>Technical Subjects</h3>
+          <p><strong>Computer Studies</strong><br>
+             <strong>Business Studies</strong><br>
+             <strong>Agriculture</strong><br>
+             <strong>Home Science</strong></p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎭</div>
+          <h3>Extracurricular</h3>
+          <p><strong>Journalism</strong> • <strong>Debate</strong>
+             <strong>Mjadala </strong>• <strong>Scout</strong>
+             <strong>Mathematics </strong>• <strong>Science</strong>
+             <strong>Environmental</strong> • <strong>Infrustructure</strong></p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎓</div>
+          <h3>Curriculum</h3>
+          <p>Transitioning from the 8-4-4 system to the new CBC 2-6-3-3-3 system, ensuring students are well-prepared for modern challenges.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff">
+      <div class="section-header">
+        <h2>Heads of Department</h2>
+        <p>Highly qualified and experienced educators committed to student success</p>
+      </div>
+
+      <div class="bom-header">
+            <h1>ACADEMIC LEADERSHIP</h1>
+            <p>Our Dedicated Department and Subject Leaders</p>
+        </div>
+        
+        <div class="leadership-container">
+            <!-- Senior Leadership -->
+            <div class="leadership-section">
+                <h2>Senior Academic Leadership</h2>
+                <div class="leadership-grid">
+                    <div class="leader-card director">
+                        <h3>Director of Studies</h3>
+                        <p class="name">Mr. Okoth Evans</p>
+                        <p class="role">Overall Academic Oversight</p>
+                    </div>
+                    <div class="leader-card deputy">
+                        <h3>Deputy Director</h3>
+                        <p class="name">Mr. Sadia Jared</p>
+                        <p class="role">Assistant Academic Leader</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department Heads -->
+            <div class="leadership-section">
+                <h2>Heads of Departments (HODs)</h2>
+                <div class="department-grid">
+                    <div class="dept-card">
+                        <div class="dept-icon">📐</div>
+                        <h4>Mathematics</h4>
+                        <p class="dept-head">Mr. Okoth Evans</p>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-icon">📚</div>
+                        <h4>Languages</h4>
+                        <p class="dept-head">Mrs. Otieno Carolyne</p>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-icon">🔬</div>
+                        <h4>Sciences</h4>
+                        <p class="dept-head">Ms. Juma Conslate</p>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-icon">🌍</div>
+                        <h4>Humanities</h4>
+                        <p class="dept-head">Ms. Sikobe Dorothy</p>
+                    </div>
+                    <div class="dept-card">
+                        <div class="dept-icon">⚙️</div>
+                        <h4>Technical & Applied</h4>
+                        <p class="dept-head">Mr. Atendo Reagan</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subject Leaders -->
+            <div class="leadership-section">
+                <h2>Subject Leaders (HOSs)</h2>
+                <div class="subjects-container">
+                    <div class="subject-category">
+                        <h3>📐 Mathematics & Sciences</h3>
+                        <div class="subject-list">
+                            <div class="subject-item">
+                                <span class="subject">Mathematics</span>
+                                <span class="teacher">Ms. Gero Elvira</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Biology</span>
+                                <span class="teacher">Ms. Ayore Effie</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Chemistry</span>
+                                <span class="teacher">Mrs. Mimba Rollyne</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Physics</span>
+                                <span class="teacher">Mr. Ouma Kevin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject-category">
+                        <h3>📚 Languages</h3>
+                        <div class="subject-list">
+                            <div class="subject-item">
+                                <span class="subject">English</span>
+                                <span class="teacher">Ms. Mikal Modi</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Kiswahili</span>
+                                <span class="teacher">Mrs. Awiti Lilian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject-category">
+                        <h3>🌍 Humanities</h3>
+                        <div class="subject-list">
+                            <div class="subject-item">
+                                <span class="subject">History</span>
+                                <span class="teacher">Ms. Ongesa Phelestine</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Geography</span>
+                                <span class="teacher">Ms. Chichole Beatrice</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">C.R.E</span>
+                                <span class="teacher">Ms. Winnie Charles</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subject-category">
+                        <h3>💻 Technical & Practical</h3>
+                        <div class="subject-list">
+                            <div class="subject-item">
+                                <span class="subject">Computer Studies</span>
+                                <span class="teacher">Mr. Bengat Charles</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Business Studies</span>
+                                <span class="teacher">Mr. Menya Brian</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Agriculture</span>
+                                <span class="teacher">Mr. Ojwang Jack</span>
+                            </div>
+                            <div class="subject-item">
+                                <span class="subject">Home Science</span>
+                                <span class="teacher">Mrs. Owili Grace</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+
+            <!-- Support Staff -->
+            <div class="leadership-section">
+                <h2>Student Support & Quality Assurance</h2>
+                <div class="support-grid">
+                    <div class="support-card">
+                        <h4>🎯 Career Guidance</h4>
+                        <p class="support-name">Ms. Modi Mikal</p>
+                        <p class="support-role">Career Mistress</p>
+                    </div>
+                    <div class="support-card">
+                        <h4>📊 Quality Assurance</h4>
+                        <p class="support-name">Mrs. Kadieda Everlyne</p>
+                        <p class="support-role">QA Officer</p>
+                    </div>
+                    <div class="support-card">
+                        <h4>⚽ Sports Coordination</h4>
+                        <p class="support-name">Mr. Juma Herbert</p>
+                        <p class="support-role">Games Master</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- B.O.M -->
+    <section id="bom">
+      <div class="section-header">
+        <h2>Board Of Management</h2>
+        <p>The BOM oversees the strategic direction and governance of the school.</p>
+      </div>
+
+      <div class="car">
+        <div class="bom-container">
+        <div class="bom-header">
+            <h1>BOARD OF MANAGEMENT</h1>
+            <p>Board of Management (BOM) Members - May 2025</p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Section</th>
+                        <th>Area</th>
+                        <th>Name of Nominee</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>Qualification</th>
+                        <th>Profession</th>
+                        <th>Occupation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>56(a)</td>
+                        <td>Parents<b>(3)</b></td>
+                        <td class="teacher-name">Mr. Tambo David</td>
+                        <td class="gender">M</td>
+                        <td class="age">67</td>
+                        <td class="qualification">Degeree</td>
+                        <td>Business Administrative</td>
+                        <td class="subject-name">Governance & leadership policy</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Rev. Agness Awuor</td>
+                        <td class="gender">F</td>
+                        <td class="age">47</td>
+                        <td class="qualification">Certificate</td>
+                        <td>Reverend</td>
+                        <td class="subject-name">Senior Pastor (PAG)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Mr. Asuga Evans</td>
+                        <td class="gender">M</td>
+                        <td class="age">41</td>
+                        <td class="qualification">Degree</td>
+                        <td>Accountant</td>
+                        <td class="subject-name">Auditor</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Community<b>(3)</b></td>
+                        <td class="teacher-name">Eng. Jack Ndede</td>
+                        <td class="gender">M</td>
+                        <td class="age">39</td>
+                        <td class="qualification">Diploma</td>
+                        <td>Civil Engineering</td>
+                        <td class="subject-name">Engineer</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Mr. Kungu David</td>
+                        <td class="gender">M</td>
+                        <td class="age">42</td>
+                        <td class="qualification">Degeree</td>
+                        <td>Accountant</td>
+                        <td class="subject-name">Accountant</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Mrs. Aron Agnes</td>
+                        <td class="gender">F</td>
+                        <td class="age">40</td>
+                        <td class="qualification">Masters</td>
+                        <td>Law</td>
+                        <td class="subject-name">Lawyer</td>
+                    </tr>
+                    <tr>
+                        <td>56(b)</td>
+                        <td>Sponsors<b>(1)</b></td>
+                        <td class="teacher-name">Mr. Obat Titus</td>
+                        <td class="gender">M</td>
+                        <td class="age">65</td>
+                        <td class="qualification">Degree</td>
+                        <td>Teacher</td>
+                        <td class="subject-name">Retired</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Rev. Backer Gawo</td>
+                        <td class="gender">M</td>
+                        <td class="age">47</td>
+                        <td class="qualification">Diploma</td>
+                        <td>Theology</td>
+                        <td class="subject-name">Vicar</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="teacher-name">Mrs. Haya Joyce</td>
+                        <td class="gender">F</td>
+                        <td class="age">66</td>
+                        <td class="qualification">Certificate</td>
+                        <td>Teacher</td>
+                        <td class="subject-name">Retired</td>
+                    </tr>
+                    <tr>
+                        <td>56(c)</td>
+                        <td>Special needs category<b> (1)</b></td>
+                        <td class="teacher-name">Mr. Ogola Jacob</td>
+                        <td class="gender">M</td>
+                        <td class="age">60</td>
+                        <td class="qualification">CPA</td>
+                        <td>CPA</td>
+                        <td class="subject-name">Accountant</td>
+                    </tr>
+                    <tr>
+                        <td>56(d)</td>
+                        <td>Special interest<b> (1)</b></td>
+                        <td class="teacher-name">Mr. Nyamita Augustine</td>
+                        <td class="gender">M</td>
+                        <td class="age">50</td>
+                        <td class="qualification">Diploma</td>
+                        <td>Mechanical Engineer</td>
+                        <td class="subject-name">Senior Technician (Coca cola)</td>
+                    </tr>
+                    <tr>
+                        <td>56(e)</td>
+                        <td>C.E.B Representative <b>(1)</b></td>
+                        <td class="teacher-name">Dr. Gachemba Damaris</td>
+                        <td class="gender">F</td>
+                        <td class="age">46</td>
+                        <td class="qualification">PhD</td>
+                        <td>Lecturer</td>
+                        <td class="subject-name">Senior Lecturer</td>
+                    </tr>
+                    <tr>
+                        <td>56(f)</td>
+                        <td>Teaching staff rep <b>(1)</b></td>
+                        <td class="teacher-name">Mrs. Kerubo Miriam Nyabira</td>
+                        <td class="gender">F</td>
+                        <td class="age">39</td>
+                        <td class="qualification">Masters</td>
+                        <td>Teacher</td>
+                        <td class="subject-name">Director of Studies</td>
+                    </tr>
+                    <tr>
+                        <td>56(g)</td>
+                        <td>Student rep <b>(1)</b></td>
+                        <td class="teacher-name">Sherry Lemmy</td>
+                        <td class="gender">F</td>
+                        <td class="age">16</td>
+                        <td class="qualification">F2</td>
+                        <td>Student council</td>
+                        <td class="subject-name">Student council</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Principal</td>
+                        <td class="teacher-name">Mr. Oguta Kennedy Odhiambo</td>
+                        <td class="gender">M</td>
+                        <td class="age">55</td>
+                        <td class="qualification">Masters</td>
+                        <td>Teacher</td>
+                        <td class="subject-name">Principal</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>P.A Representative</td>
+                        <td class="teacher-name">Mr. Omollo Peeter</td>
+                        <td class="gender">M</td>
+                        <td class="age">52</td>
+                        <td class="qualification">Masters</td>
+                        <td>Accountant</td>
+                        <td class="subject-name">Accountant</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+      </div>
+    </section>
+
+	  <!-- Gallery Section -->
+        <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+      <div class="section-header">
+        <h2>School Gallery</h2>
+        <p>Capturing moments of learning, growth, and achievement at our school</p>
+      </div>  
+      
+      <div class="gallery-filters">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="staff" class="filter-btn">Staff</button>
+        <button data-filter="admin" class="filter-btn">Administration</button>
+        <button data-filter="council" class="filter-btn">Council</button>
+        <button data-filter="lab" class="filter-btn">Laboratory</button>
+        <button data-filter="drama" class="filter-btn">Clubs</button>
+        <button data-filter="library" class="filter-btn">Library</button>
+        <button data-filter="structure" class="filter-btn">Infrustructure</button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/p.jpg') }}" class="gallery-image" alt="principal" loading="lazy">
+          <div class="gallery-content">
+            <h4>Principal</h4>
+            <p>The school's visionary leader, guiding academic excellence and holistic development.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/dpad.jpg') }}" class="gallery-image" alt="dpad" loading="lazy">
+          <div class="gallery-content">
+            <h4>Deputy Principal (Administration)</h4>
+            <p>Oversees school operations, discipline, and resource management to ensure smooth functioning.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/dpa.jpg') }}" class="gallery-image" alt="dpa" loading="lazy">
+          <div class="gallery-content">
+            <h4>Deputy Principal (Academics)</h4>
+            <p>Leads academic programs, curriculum planning, and perfomance improvement strategies.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/sch.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
+          <div class="gallery-content">
+            <h4>School Campus</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item lab">
+          <img src="{{ url_for('static', filename='images/lab1.jpg') }}" class="gallery-image" alt="lab1" loading="lazy">
+          <div class="gallery-content">
+            <h4>Science Laboratory 1</h4>
+            <p>Well-equipped science laboratories where students conduct practical experiments and enhance their understanding.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item lab">
+          <img src="{{ url_for('static', filename='images/lab2.jpg') }}" class="gallery-image" alt="lab2" loading="lazy">
+          <div class="gallery-content">
+            <h4>Science Laboratory 2</h4>
+            <p>A modern laboratory equipped for hands-on science experiments and STEM learning.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item lab">
+          <img src="{{ url_for('static', filename='images/lab3.jpg') }}" class="gallery-image" alt="lab2" loading="lazy">
+          <div class="gallery-content">
+            <h4>Science Laboratory 3</h4>
+            <p>A modern laboratory equipped for hands-on science experiments and STEM learning.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item library">
+          <img src="{{ url_for('static', filename='images/lib.jpg') }}" class="gallery-image" alt="lib" loading="lazy">
+          <div class="gallery-content">
+            <h4>Library & Study Area</h4>
+            <p>Our library provides a quiet space for research and study, stocked with educational resources and books.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item lab">
+          <img src="{{ url_for('static', filename='images/clab.jpg') }}" class="gallery-image" alt="c_lab" loading="lazy">
+          <div class="gallery-content">
+            <h4>Computer Laboratory</h4>
+            <p>Modern computer lab equipped with the latest technology to enhance digital literacy among students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/adb.jpg') }}" class="gallery-image" alt="adb" loading="lazy">
+          <div class="gallery-content">
+            <h4>Admission Block</h4>
+            <p>The administrative center for student admissions and essential school services.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="/images/dm.jpg" class="gallery-image" alt="Journalism" loading="lazy">
+          <div class="gallery-content">
+            <h4>Journalism Club</h4>
+            <p>Builds writing and reporting skills through newsletters and event coverage.</p>
+            <div class="announcement-date"><b>Headed by:</b> Ms. Modi Mikal</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="/images/dm.jpg" class="gallery-image" alt="debate" loading="lazy">
+          <div class="gallery-content">
+            <h4>Debate Club</h4>
+            <p>Enhance public speaking and critical thinking through organized debates.</p>
+            <div class="announcement-date"><b>Headed by:</b> Mr. Sadia Jared</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/mj.jpg') }}" class="gallery-image" alt="mjadala" loading="lazy">
+          <div class="gallery-content">
+            <h4>Mjadala Club</h4>
+            <p>Huwahimiza wanafunzi kujieleza kwa ufasaha kupitia mijadala ya masuala ya kijamii.</p>
+            <div class="announcement-date"><b>Headed by:</b> Ms. Oyucho Millicent</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/scout.jpg') }}" class="gallery-image" alt="scout" loading="lazy">
+          <div class="gallery-content">
+            <h4>Scouts Club</h4>
+            <p>Instills discipline and leadership through outdoor and team activities.</p>
+            <div class="announcement-date"><b>Headed by:</b> Mr. Kamaliza Coference</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/mat.jpg') }}" class="gallery-image" alt="mat" loading="lazy">
+          <div class="gallery-content">
+            <h4>Mathematics Club</h4>
+            <p>Develops logical thinking with fun challenges and math activities.</p>
+            <div class="announcement-date"><b>Headed by:</b> Ms. Gero Elvira</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/sci.jpg') }}" class="gallery-image" alt="sci" loading="lazy">
+          <div class="gallery-content">
+            <h4>Science Club</h4>
+            <p>Encourages exploration through experiments, projects, and science fairs.</p>
+            <div class="announcement-date"><b>Headed by:</b> Mrs. Mimba Rollyne</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/env.jpg') }}" class="gallery-image" alt="env" loading="lazy">
+          <div class="gallery-content">
+            <h4>Environmental Club</h4>
+            <p>Advocates for sustainability through clean-ups and tree planting.</p>
+            <div class="announcement-date"><b>Headed by:</b> Mr. Ojwang Jack</div>
+          </div>
+        </div>
+
+        <div class="gallery-item drama">
+          <img src="{{ url_for('static', filename='images/infr.jpg') }}" class="gallery-image" alt="d&m" loading="lazy">
+          <div class="gallery-content">
+            <h4>Furnitures and Infrustructure Club</h4>
+            <p>Improves school facilities with creative and practical student projects.</p>
+            <div class="announcement-date"><b>Headed by:</b> Mr. Ojwang Jack & Mr. Kamaliza Coference</div>
+          </div>
+        </div>
+
+        <div class="gallery-item staff">
+          <img src="{{ url_for('static', filename='images/ts.jpg') }}" class="gallery-image" alt="ts" loading="lazy">
+          <div class="gallery-content">
+            <h4>Teaching Staff</h4>
+            <p>Dedicated teaching staff committed to providing quality education and mentorship to students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item staff">
+          <img src="{{ url_for('static', filename='images/nts.jpg') }}" class="gallery-image" alt="ts" loading="lazy">
+          <div class="gallery-content">
+            <h4>Non-teaching Staff</h4>
+            <p>Support staff who ensure the smooth operation of school facilities and services.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item council">
+          <img src="{{ url_for('static', filename='images/prez.jpg') }}" class="gallery-image" alt="prezo" loading="lazy">
+          <div class="gallery-content">
+            <h4>School President</h4>
+            <p>Leads the student body, representing learners in school affairs and fostering unity.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item council">
+          <img src="{{ url_for('static', filename='images/sc.jpg') }}" class="gallery-image" alt="dsc" loading="lazy">
+          <div class="gallery-content">
+            <h4>D. School President</h4>
+            <p>Assists the school president in leadership duties and coordinate student council responsibilities and events.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item council">
+          <img src="{{ url_for('static', filename='images/prez.jpg') }}" class="gallery-image" alt="sc" loading="lazy">
+          <div class="gallery-content">
+            <h4>Student Council</h4>
+            <p>A team of elected students who represent the student body and organize school events.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item structure">
+          <img src="{{ url_for('static', filename='images/bla.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
+          <div class="gallery-content">
+            <h4>Block A</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item structure">
+          <img src="{{ url_for('static', filename='images/blk.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
+          <div class="gallery-content">
+            <h4>Classroom Block B</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item structure">
+          <img src="{{ url_for('static', filename='images/kitchen.jpg') }}" class="gallery-image" alt="kitc" loading="lazy">
+          <div class="gallery-content">
+            <h4>Kitchen</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item structure">
+          <img src="{{ url_for('static', filename='images/lab.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
+          <div class="gallery-content">
+            <h4>Labaratory</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item structure">
+          <img src="{{ url_for('static', filename='images/stfr.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
+          <div class="gallery-content">
+            <h4>Staff room</h4>
+            <p>Our beautiful and modern school campus provides an excellent learning environment for all students.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- More Button --> 
+      <div class="view-more-wrapper"> 
+        <div class="gallery-more">
+          <button id="view-more-btn" class="view-more-btn">View More</button>
+        </div>
+      </div>
+
+    </section>
+
+	<!-- Announcements Section -->
+   <section id="announcements">
+            <div class="section-header">
+                <h2>Latest Announcements</h2>
+                <p>Stay updated with important news and events from our school</p>
+            </div>
+            <div class="support-form">
+              {% if announcements %}
+                  {% for announcement in announcements %}
+                  <div class="announcement">
+                      <h4>{{ announcement.title }}</h4>
+                      <p>{{ announcement.content }}</p>
+                      <div class="announcement-date">Posted: {{ announcement.date }}</div>
+                  </div>
+                  {% endfor %}
+              {% else %}
+                  <div class="no-announcements">
+                      <p>No announcements available at the moment.</p>
+                  </div>
+              {% endif %}
+
+              <div class="admin-link">
+                <a href="{{ url_for('admin') }}">Admin Panel</a>
+              </div>
+            </div>
+        </section>
+
+	<!-- Alumni Section -->
+	<section id="alumni" style="padding: 4rem 2rem;" action="/submit-alumni" method="POST">
+	<div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+		<h2>Alumni Registration</h2>
+		<p>We'd love to hear from our former students. Please fill in your details below.</p>
+	</div>
+
+	<form class="alumni-form">
+		<div class="form-grid">
+		<div class="form-group">
+			<label for="alumni-name">Alumni Name</label>
+			<input type="text" id="alumni-name" name="alumni-name" placeholder="Enter your full name" required>
+		</div>
+
+		<div class="form-group">
+			<label for="alumni-phone">Phone Number</label>
+			<input type="tel" id="alumni-phone" name="alumni-phone" placeholder="Enter your phone number" required>
+		</div>
+
+		<div class="form-group">
+			<label for="year-started">Year Started</label>
+			<input type="number" id="year-started" name="year-started" placeholder="e.g. 2010" required>
+		</div>
+
+		<div class="form-group">
+			<label for="year-finished">Year Finished</label>
+			<input type="number" id="year-finished" name="year-finished" placeholder="e.g. 2014" required>
+		</div>
+		</div>
+
+		<div class="form-actions">
+		<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+	</form>
+	</section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Contact Information</h2>
+        <p>Get in touch with us for any inquiries</p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">📍</div>
+          <h3>Location</h3>
+          <div class="map-container">
+            <iframe 
+                src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63837.02255155618!2d34.766848!3d-0.08519679999998918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa483d20512ad%3A0x18db4ec6d080f241!2sShaurimoyo%20High%20School!5e0!3m2!1sen!2ske!4v1748596060843!5m2!1sen!2ske"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="map-overlay"></div>
+            <button class="directions-btn" onclick="openDirections()">Get Directions</button>
+          </div>
+          <div class="map-info">
+            <a href="https://www.google.com/maps/place/Shaurimoyo+High+School/" target="_blank" class="view-larger">
+                  View larger map
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📮</div>
+          <h3>Postal Address</h3>
+          <p>P.O Box 169-40100<br>
+             Kisumu, Kenya</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📞</div>
+          <h3>Contact Us</h3>
+          <p>For more information about admissions, programs, or general inquiries, please visit our school office during business hours.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>Bishop Abiero Shaurimoyo Secondary School</h3>
+          <p>Empowering students through education, discipline, and service</p><br>
+
+          <div class="footer-socials">
+            <a href="https://www.youtube.com/@bishopabieroshaurimoyo" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/bishopabieroshaurimoyo" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/bass_school" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/bass_school" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <!--li><a href="#academics">Academics</a></li-->
+            <!--li><a href="#staff">Staff</a></li-->
+            <li><a href="#admin">Administration</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#announcement">Announcements</a></li>
+            <li><a href="#support">Support Us</a></li>
+            <!--li><a href="#contact">Contact Us</a></li-->
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>Email: info@bass.edu.ke</p>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bishop Abiero Shaurimoyo Secondary School. All rights reserved.</p>
+        <!-- <p>Website designed by <a href="#">bass</a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    //  Location
+     function openDirections() {
+        const address = "Shaurimoyo, Kisumu, Kenya";
+        const url = `https://maps.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+        window.open(url, '_blank');
+      }
+
+      function toggleMobileMenu() {
+        const nav = document.getElementById('nav-menu');
+        const btn = document.querySelector('.mobile-menu-btn span');
+
+        nav.classList.toggle('active');
+
+        // Animate the menu button text
+        if (btn) {
+          if (nav.classList.contains('active')) {
+            btn.innerHTML = '✕';
+          } else {
+            btn.innerHTML = '☰';
+          }
+        }
+      }
+
+      // Close mobile menu when clicking on a link
+      document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          const nav = document.getElementById('nav-menu');
+          const btn = document.querySelector('.mobile-menu-btn span');
+
+          if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            if (btn) btn.innerHTML = '☰';
+          }
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const nav = document.getElementById('nav-menu');
+        const btn = document.querySelector('.mobile-menu-btn span');
+        const navSection = document.querySelector('.nav-section');
+
+        if (!navSection.contains(e.target) && !e.target.closest('.mobile-menu-btn')) {
+          if (nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            if (btn) btn.innerHTML = '☰';
+          }
+        }
+      });
+      // Intersection Observer for animations
+      alert("Hey mate, welcome to the Bishop Abiero Shaurimoyo Secondary School website! We are glad to have you here. The site is still under development, so please bear with us as we work to make it even better. If you have any questions or need assistance, feel free to reach out. Enjoy your visit!");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all sections
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Header scroll effect
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        const header = document.querySelector('header');
+        
+        if (currentScroll > 100) {
+          header.style.background = 'rgba(44, 90, 160, 0.95)';
+          header.style.backdropFilter = 'blur(15px)';
+        } else {
+          header.style.background = 'linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)';
+          header.style.backdropFilter = 'blur(10px)';
+        }
+        
+        lastScroll = currentScroll;
+      });
+
+      document.querySelector('.alumni-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      
+      try {
+          const response = await fetch('/submit-alumni', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data)
+          });
+          
+          const result = await response.json();
+          
+          // Check if the HTTP status is successful AND no error in response
+          if (response.ok && !result.error) {
+              alert(result.message);
+              this.reset();
+              // Optionally redirect to admin panel or refresh
+              // window.location.reload();
+          } else {
+              alert('Error: ' + (result.error || result.message || 'Unknown error'));
+          }
+      } catch (error) {
+          alert('Submission failed. Please try again.');
+      }
+    });
+    
+
+    // M-Pesa payment simulation
+    function sendMpesaPayment() {
+      const form = document.getElementById('supportForm');
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const amount = document.getElementById('amount').value;
+      
+      if (!name || !phone || !amount) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      const paymentText = document.getElementById('payment-text');
+      const paymentLoading = document.getElementById('payment-loading');
+      
+      // Show loading state
+      paymentText.style.display = 'none';
+      paymentLoading.style.display = 'inline-block';
+      
+      // Simulate payment processing
+      setTimeout(() => {
+        paymentText.style.display = 'inline';
+        paymentLoading.style.display = 'none';
+        
+        alert(`Thank you ${name}! Your contribution of KES ${amount} is being processed. You will receive an M-Pesa prompt on ${phone} shortly.`);
+        form.reset();
+      }, 2000);
+    }
+
+    const allItems = document.querySelectorAll('.gallery-item');
+    const viewMoreBtn = document.getElementById('view-more-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const hiddenItems = document.querySelectorAll('.gallery-item[data-extra]');
+
+    let initialLimit = 6;
+
+    function showInitialItems() {
+      allItems.forEach((item, index) => {
+        if (index < initialLimit) {
+          item.classList.add('show');
+        } else {
+          item.classList.remove('show');
+        }
+      });
+      viewMoreBtn.style.display = 'block';
+    }
+
+    function showAllItems() {
+      allItems.forEach(item => item.classList.add('show'));
+      viewMoreBtn.style.display = 'none';
+    }
+
+    viewMoreBtn.addEventListener('click', showAllItems);
+    viewMoreBtn.addEventListener('click', () => {
+      const isExpanded = viewMoreBtn.textContent === 'View Less';
+      hiddenItems.forEach(item => {
+        item.classList.toggle('hidden', isExpanded);
+      });
+
+      viewMoreBtn.textContent = isExpanded ? 'View More' : 'View Less';
+    });
+
+    // Filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        if (filter === 'all') {
+          showInitialItems();
+        } else {
+          allItems.forEach(item => {
+            item.classList.remove('show');
+            if (item.classList.contains(filter)) {
+              item.classList.add('show');
+            }
+          });
+          viewMoreBtn.style.display = 'none';
+        }
+      });
+    });
+    showInitialItems(); // Run once on load
+
+
+    // Add smooth scrolling to navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  <script src="{{ url_for('static', filename='/script.js') }}"></script>
+</body>
+</html>
