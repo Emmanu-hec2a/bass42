@@ -19,7 +19,7 @@ MPESA_CONSUMER_KEY = os.environ.get('MPESA_CONSUMER_KEY')
 MPESA_CONSUMER_SECRET = os.environ.get('MPESA_CONSUMER_SECRET')
 MPESA_SHORTCODE = os.environ.get('MPESA_SHORTCODE')
 MPESA_PASSKEY = os.environ.get('MPESA_PASSKEY')
-MPESA_CALLBACK_URL = os.environ.get('MPESA_CALLBACK_URL', 'https://your-domain.com/mpesa/callback')
+MPESA_CALLBACK_URL = os.environ.get('MPESA_CALLBACK_URL')
 
 # Admin credentials
 ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
