@@ -223,6 +223,242 @@
                 </div>
             {% endif %}
         </div>
+
+        <div class="admin-header">
+            <h1> Teachers Approval Portal</h1>
+            <p>Manage teacher registrations and approvals</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">{{ pending_teachers|length }}</div>
+                <div class="stat-label">Pending Approvals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ approved_teachers|length }}</div>
+                <div class="stat-label">Approved Teachers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ (pending_teachers|length + approved_teachers|length) }}</div>
+                <div class="stat-label">Total Registrations</div>
+            </div>
+        </div>
+
+        <div class="section pending-section">
+            <div class="section-header">
+                ⏳ Pending Approvals ({{ pending_teachers|length }})
+            </div>
+            <div class="table-container">
+                {% if pending_teachers %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Registration Code</th>
+                            <th>Registration Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teacher in pending_teachers %}
+                        <tr>
+                            <td>{{ teacher[1] }}</td>
+                            <td>{{ teacher[2] }}</td>
+                            <td>{{ teacher[3] if teacher[3] else 'Practice Teacher' }}</td>
+                            <td>{{ teacher[4] }}</td>
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <a href="/admin/approve/{{ teacher[0] }}" class="btn btn-approve" 
+                                onclick="return confirm('Approve this teacher?')">✅ Approve</a>
+                                <a href="/admin/reject/{{ teacher[0] }}" class="btn btn-reject" 
+                                onclick="return confirm('Reject and remove this teacher?')">❌ Reject</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="empty-state">
+                    <div>✅</div>
+                    <h3>No Pending Approvals</h3>
+                    <p>All teacher registrations have been processed.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                ✅ Approved Teachers ({{ approved_teachers|length }})
+            </div>
+            <div class="table-container">
+                {% if approved_teachers %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Registration Code</th>
+                            <th>Registration Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teacher in approved_teachers %}
+                        <tr>
+                            <td>{{ teacher[1] }}</td>
+                            <td>{{ teacher[2] }}</td>
+                            <td>{{ teacher[3] if teacher[3] else 'Practice Teacher' }}</td>
+                            <td>{{ teacher[4] }}</td>
+                            <td><span class="status-badge status-approved">Approved</span></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div class="empty-state">
+                    <div>👥</div>
+                    <h3>No Approved Teachers Yet</h3>
+                    <p>Approved teachers will appear here.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!--div class="admin-header">
+            <h1>🔑 Registration Codes</h1>
+            <div class="nav-links">
+                <a href="/admin/panel" class="nav-link">👥 Teachers</a>
+                <a href="/admin/codes" class="nav-link">🔑 Codes</a>
+                <a href="/teachers/logout" class="nav-link">🚪 Logout</a>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="instructions">
+            <h3>📋 How Registration Codes Work:</h3>
+            <ol>
+                <li>Generate a new registration code using the button below</li>
+                <li>Share the code with authorized teachers (via email, WhatsApp, etc.)</li>
+                <li>Teachers enter this code during registration for instant approval</li>
+                <li>Each code can only be used once and becomes inactive after use</li>
+                <li>Teachers without codes will need manual approval</li>
+            </ol>
+        </div>
+
+        {% set total_codes = codes|length %}
+        {% set used_codes = codes|selectattr('1', 'equalto', 1)|list|length %}
+        {% set available_codes = total_codes - used_codes %}
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">{{ total_codes }}</div>
+                <div class="stat-label">Total Codes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ available_codes }}</div>
+                <div class="stat-label">Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">{{ used_codes }}</div>
+                <div class="stat-label">Used</div>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <div class="generate-section">
+                <div>
+                    <h3>Generate New Registration Code</h3>
+                    <p>Create a new code for teachers to register with instant approval</p>
+                </div>
+                <form method="POST" action="/admin/generate-code">
+                    <button type="submit" class="generate-btn">🎯 Generate New Code</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="codes-section">
+            <div class="section-header">
+                🔑 All Registration Codes ({{ total_codes }})
+            </div>
+            <div class="table-container">
+                {% if codes %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Registration Code</th>
+                            <th>Status</th>
+                            <th>Used By</th>
+                            <th>Created Date</th>
+                            <th>Used Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for code in codes %}
+                        <tr>
+                            <td>
+                                <span class="code-display" onclick="copyToClipboard('{{ code[0] }}')">
+                                    {{ code[0] }}
+                                </span>
+                            </td>
+                            <td>
+                                {% if code[1] %}
+                                    <span class="status-badge status-used">Used</span>
+                                {% else %}
+                                    <span class="status-badge status-available">Available</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if code[5] %}
+                                    {{ code[5] }} ({{ code[6] }})
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td>{{ code[3] }}</td>
+                            <td>{{ code[4] if code[4] else '-' }}</td>
+                            <td>
+                                <button onclick="copyToClipboard('{{ code[0] }}')" class="btn btn-copy">📋 Copy</button>
+                                {% if not code[1] %}
+                                    <a href="/admin/delete-code/{{ code[0] }}" class="btn btn-delete" 
+                                    onclick="return confirm('Delete this unused code?')">🗑️ Delete</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <div style="text-align: center; padding: 60px 20px; color: #666;">
+                    <div style="font-size: 3em; margin-bottom: 20px;">🔑</div>
+                    <h3>No Registration Codes Yet</h3>
+                    <p>Generate your first registration code to get started.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div-->
         
         <div class="back-link">
             <a href="{{ url_for('index') }}" class="btn btn-secondary">← Back to Main Page</a>
@@ -267,6 +503,25 @@
             link.click();
             document.body.removeChild(link);
         }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show success message
+                const originalText = event.target.textContent;
+                event.target.textContent = 'Copied!';
+                event.target.style.background = '#4CAF50';
+                event.target.style.color = 'white';
+                
+                setTimeout(() => {
+                    event.target.textContent = originalText;
+                    event.target.style.background = '#e3f2fd';
+                    event.target.style.color = '#1976d2';
+                }, 2000);
+            }).catch(function(err) {
+                alert('Failed to copy: ' + err);
+            });
+        }
+
     </script>
 </body>
 </html>

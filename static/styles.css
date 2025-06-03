@@ -130,9 +130,9 @@
             min-width: 250px;
         }
 
-        .nav-section {
+        /* .nav-section {
           max-height: ;
-        }
+        } */
 
         nav.active {
             max-height: 800px;
