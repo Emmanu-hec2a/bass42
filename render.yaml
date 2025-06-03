@@ -1,2 +1,3 @@
-start: gunicorn app:app --workers=1
+start: gunicorn -k eventlet -w 1 app:app
+
 
