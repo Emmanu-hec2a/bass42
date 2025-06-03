@@ -53,7 +53,29 @@
     </div>
   </section>
 
-  <main>
+  <!-- History popup overlay -->
+    <div class="history-overlay" id="historyOverlay">
+        <div class="history-card">
+            <div class="scroll-indicator">Scroll if content overflows</div>
+            
+            <div class="history-header">
+                <h2>🏫 School History</h2>
+                <div class="subtitle">A Journey Through Time</div>
+            </div>
+            
+            <div class="history-content">
+                <div class="typewriter-text" id="typewriterText"></div>
+            </div>
+            
+            <div class="continue-message" id="continueMessage" style="display: none;">
+                <p> Click anywhere to explore our school </p>
+                <small>Thank you for learning about our history</small>
+            </div>
+        </div>
+    </div>
+
+  <main class="main-content" id="mainContent">
+
     <!-- About Section -->
     <section id="about">
       <div class="section-header">
@@ -985,6 +1007,81 @@
   </footer>
 
   <script>
+        // School history text - customize this with your actual school history
+        const schoolHistory = `Bishop Abiero Shaurimoyo Secondary School was established in 2008, having a rich history and heritage spanning quite many years and the foundation is rooted in a vision to provide quality education and contribute positively to the society.<br><br>
+        The school was founded by the late Bishop Mwayi Abiero, a visionary leader who believed in the transformative power of education. Over the years, the school has grown from a small institution to a well-respected educational establishment in Kisumu County, Kenya.<br><br>
+        The school has had several principals: Mr. Omoso Meshack Wasonga (2009-2016), Madam Dinah A. Oboro (2017-2021), and current principal <strong>Mr. Oguta Kennedy Odhiambo (since 2022)</strong>.<br><br>
+        <em>Over 16 years, it has expanded from humble beginnings to include modern classrooms, science laboratories, a library, computer lab, and various clubs and societies.<em>`;
+
+        let typewriterIndex = 0;
+        let isTypewritingComplete = false;
+
+        function typeWriter() {
+            const textElement = document.getElementById('typewriterText');
+            const continueMessage = document.getElementById('continueMessage');
+            
+            if (typewriterIndex < schoolHistory.length) {
+                textElement.innerHTML = schoolHistory.substring(0, typewriterIndex + 1) + '<span class="cursor">|</span>';
+                typewriterIndex++;
+                
+                // Vary the typing speed for more natural effect
+                const delay = Math.random() * 50 + 20; // 20-70ms delay
+                setTimeout(typeWriter, delay);
+            } else {
+                // Remove cursor and show continue message
+                textElement.innerHTML = schoolHistory;
+                continueMessage.style.display = 'block';
+                isTypewritingComplete = true;
+            }
+        }
+
+         // Blur main content
+        document.getElementById('mainContent').classList.add('blurred');
+            
+        // Start typewriter effect after a short delay
+        setTimeout(() => {
+          typeWriter();
+        }, 1000);
+
+        // Add click listeners
+        document.getElementById('historyOverlay').addEventListener('click', function(e) {
+            // Only close if clicking outside the card or if typing is complete
+            if (e.target === this || (isTypewritingComplete && e.target.closest('.continue-message'))) {
+                closeHistoryPopup();
+            }
+        });
+
+        document.getElementById('continueMessage').addEventListener('click', function() {
+            closeHistoryPopup();
+        });
+
+        // Allow escape key to close popup if typing is complete
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isTypewritingComplete) {
+                closeHistoryPopup();
+            }
+        });
+
+        // Prevent closing popup while typing is in progress
+        document.addEventListener('click', function(e) {
+            if (!isTypewritingComplete && e.target.closest('.history-overlay')) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
+
+        function closeHistoryPopup() {
+            const overlay = document.getElementById('historyOverlay');
+            const mainContent = document.getElementById('mainContent');
+            
+            overlay.classList.add('hidden');
+            mainContent.classList.remove('blurred');
+            
+            // Remove the overlay completely after animation
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+        }
     //  Location
      function openDirections() {
         const address = "Shaurimoyo, Kisumu, Kenya";
@@ -1035,7 +1132,7 @@
         }
       });
       // Intersection Observer for animations
-      alert("Hey mate, welcome to the Bishop Abiero Shaurimoyo Secondary School website! We are glad to have you here. The site is still under development, so please bear with us as we work to make it even better. If you have any questions or need assistance, feel free to reach out. Enjoy your visit!");
+      // alert("Hey mate, welcome to the Bishop Abiero Shaurimoyo Secondary School website! We are glad to have you here. The site is still under development, so please bear with us as we work to make it even better. If you have any questions or need assistance, feel free to reach out. Enjoy your visit!");
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {

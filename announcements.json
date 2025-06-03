@@ -1,14 +1,14 @@
 [
   {
     "id": 2,
+    "title": "\u2728 Our Website",
+    "content": "Our Website is: \r\n\r\n[\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2591] 95%",
+    "date": "May 30, 2025"
+  },
+  {
+    "id": 2,
     "title": "\ud83d\udcda CBC Curriculum Implementation Update",
     "content": "Our school has successfully transitioned to the new Competency-Based Curriculum (CBC). All teaching staff have completed their CBC training, and we're ready to provide quality education under the new system.",
     "date": "May 15, 2025"
-  },
-  {
-    "id": 3,
-    "title": "\ud83c\udfc6 Outstanding KCSE Results 2024",
-    "content": "We are proud to announce that our students achieved excellent results in the 2024 KCSE examinations, with a 95% pass rate and several students qualifying for university admission.",
-    "date": "May 10, 2025"
   }
 ]
