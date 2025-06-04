@@ -950,7 +950,7 @@ def health_check():
 
 if __name__ == '__main__':
 
-    init_db()
+    # init_db()
     # Create directories
     os.makedirs('templates', exist_ok=True)
     
@@ -964,6 +964,6 @@ if __name__ == '__main__':
     if not os.path.exists(ALUMNI_DATA_FILE):
         save_alumni_data([])
     
-    # port = int(os.environ.get('PORT', 5000))
-    # app.run(host='0.0.0.0', port=port)
-    socketio.run(app, debug=True, host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+    # socketio.run(app, debug=True, host='0.0.0.0', port=5000)
