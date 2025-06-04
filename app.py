@@ -18,7 +18,8 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['PREFERED_URL_SCHEME'] = 'https'  # Force HTTPS in production
+app.config['SESSION_COOKIE_SECURE'] = True  # Use secure cookies in production
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # M-Pesa Configuration
