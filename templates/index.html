@@ -4,9 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bishop Abiero Shaurimoyo Secondary School</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='/styles.css') }}"> -->
-  <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+  <!-- SEO -->
+  <meta name="description" content="Official website for Bishop Abiero Shaurimoyo Secondary School - providing quality eduacation and nurturing responsible leaders" />
+  <meta name="keywords" content="Bishop Abiero, Shaurimoyo Secondary, School in Kenya, education, bass, learning, Kisumu schools" />
+  <meta name="author" content="Bishop Abiero Shaurimoyo Secondary School" />
+  <link rel="canonical" href="https://bass-uzzi.onrender.com" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Bishop Abiero Shaurimoyo Secondary School" />
+  <meta property="og:description" content="Explore our school, staff, gallery, and academics" />
+  <meta property="og:image" content="{{ url_for('static', filename='images/hero.jpg') }}" />
+  <meta property="og:url" content="https://bass-uzzi.onrender.com" />
+  <meta property="og:type" content="website" />
 
   <!-- Add these for mobile -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -197,6 +207,7 @@
 
     /* Hero Section */
     .hero {
+      
       background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
       color: white;
       padding: 30px 30px 50px 30px;
@@ -1788,7 +1799,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#academics">Academics</a></li>
             <li><a href="#staff">Staff</a></li>
-            <li><a href="#admin">Admin</a></li>
+            <li><a href="#administration">Administration</a></li>
             <li><a href="{{url_for('register')}}">Teachers Portal</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#announcements">News</a></li>
@@ -1887,7 +1898,7 @@
     </section>
 
     <!-- Administration Section -->
-    <section id="admin">
+    <section id="administration">
       <div class="section-header">
         <h2>School Administration</h2>
         <p>Experienced leadership committed to educational excellence</p>
@@ -2369,10 +2380,10 @@
       
       <div class="gallery-filters">
         <button data-filter="all" class="filter-btn active">All</button>
-        <button data-filter="staff" class="filter-btn">Staff</button>
+        <button data-filter="staf" class="filter-btn">Staff</button>
         <button data-filter="admin" class="filter-btn">Administration</button>
         <button data-filter="council" class="filter-btn">Council</button>
-        <button data-filter="lab" class="filter-btn">Laboratory</button>
+        <button data-filter="labaratory" class="filter-btn">Laboratory</button>
         <button data-filter="drama" class="filter-btn">Clubs</button>
         <button data-filter="library" class="filter-btn">Library</button>
         <button data-filter="structure" class="filter-btn">Infrustructure</button>
@@ -2410,7 +2421,7 @@
           </div>
         </div>
 
-        <div class="gallery-item lab">
+        <div class="gallery-item labaratory">
           <img src="{{ url_for('static', filename='images/lab1.jpg') }}" class="gallery-image" alt="lab1" loading="lazy">
           <div class="gallery-content">
             <h4>Science Laboratory 1</h4>
@@ -2418,7 +2429,7 @@
           </div>
         </div>
 
-        <div class="gallery-item lab">
+        <div class="gallery-item labaratory">
           <img src="{{ url_for('static', filename='images/lab2.jpg') }}" class="gallery-image" alt="lab2" loading="lazy">
           <div class="gallery-content">
             <h4>Science Laboratory 2</h4>
@@ -2426,7 +2437,7 @@
           </div>
         </div>
 
-        <div class="gallery-item lab">
+        <div class="gallery-item labaratory">
           <img src="{{ url_for('static', filename='images/lab3.jpg') }}" class="gallery-image" alt="lab2" loading="lazy">
           <div class="gallery-content">
             <h4>Science Laboratory 3</h4>
@@ -2442,7 +2453,7 @@
           </div>
         </div>
 
-        <div class="gallery-item lab">
+        <div class="gallery-item labaratory">
           <img src="{{ url_for('static', filename='images/clab.jpg') }}" class="gallery-image" alt="c_lab" loading="lazy">
           <div class="gallery-content">
             <h4>Computer Laboratory</h4>
