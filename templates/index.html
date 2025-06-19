@@ -1910,13 +1910,13 @@
           <!--div class="card-icon">👨‍💼</div-->
           <h3>Principal</h3>
           <p><strong>Mr. Oguta Kennedy</strong><br>
-             Subject: English Literature and BST<br>
+             Subject: English and BST<br>
              Leading with vision and integrity</p>
         </div>
 
         <div class="card">
           <div class="card-icon">👨‍💻</div>
-          <h3>Deputy Principal (Admin)</h3>
+          <h3>Deputy Principal (Administration)</h3>
           <p><strong>Mr. Okello Nicholas</strong><br>
              Subjects: Geography & Mathematics<br>
              Managing school operations</p>
@@ -1925,9 +1925,17 @@
         <div class="card">
           <div class="card-icon">👩‍🏫</div>
           <h3>Deputy Principal (Academics)</h3>
+          <p><strong>Mrs. Awiti Lilian</strong><br>
+             Subjects: Kiswahili & History<br>
+             Overseeing academic excellence</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👩‍🏫</div>
+          <h3>Deputy Principal (Logistics and Protocol)</h3>
           <p><strong>Mrs. Kerubo Miriam Nyabira</strong><br>
              Subjects: Kiswahili & C.R.E<br>
-             Overseeing academic excellence</p>
+             Overseeing and maintainance of orderliness and decorum during school functions.</p>
         </div>
 
         <div class="card">
@@ -2415,6 +2423,14 @@
         </div>
 
         <div class="gallery-item admin">
+          <img src="{{ url_for('static', filename='images/dplp.jpg') }}" class="gallery-image" alt="dpa" loading="lazy">
+          <div class="gallery-content">
+            <h4>Deputy Principal (Logistics and Protocol)</h4>
+            <p>Overseeing and maintainance of orderliness and decorum during school functions.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item admin">
           <img src="{{ url_for('static', filename='images/sch.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
           <div class="gallery-content">
             <h4>School Campus</h4>
@@ -2563,6 +2579,7 @@
           <div class="gallery-content">
             <h4>School President</h4>
             <p>Leads the student body, representing learners in school affairs and fostering unity.</p>
+            <div class="announcement-date"><b>Name:</b> Eric Ouma, Form 4A</div>
           </div>
         </div>
 
@@ -2571,16 +2588,17 @@
           <div class="gallery-content">
             <h4>D. School President</h4>
             <p>Assists the school president in leadership duties and coordinate student council responsibilities and events.</p>
+            <div class="announcement-date"><b>Name:</b> Rolex Goodluck, Form 3B</div>
           </div>
         </div>
 
-        <div class="gallery-item council">
+        <!--div class="gallery-item council">
           <img src="{{ url_for('static', filename='images/scl.jpg') }}" class="gallery-image" alt="sc" loading="lazy">
           <div class="gallery-content">
             <h4>Student Council</h4>
             <p>A team of elected students who represent the student body and organize school events.</p>
           </div>
-        </div>
+        </div-->
 
         <div class="gallery-item structure">
           <img src="{{ url_for('static', filename='images/bla.jpg') }}" class="gallery-image" alt="sch" loading="lazy">
@@ -2783,9 +2801,9 @@
   <script>
         // School history text - customize this with your actual school history
         const schoolHistory = `Bishop Abiero Shaurimoyo Secondary School was established in 2008, having a rich history and heritage spanning quite many years and the foundation is rooted in a vision to provide quality education and contribute positively to the society.<br><br>
-        The school was founded by the late Bishop Mwayi Abiero, a visionary leader who believed in the transformative power of education. Over the years, the school has grown from a small institution to a well-respected educational establishment in Kisumu County, Kenya.<br><br>
+        The school was founded by the late Dr. Bishop Mwayi Abiero, a visionary leader who believed in the transformative power of education. Over the years, the school has grown from a small institution to a well-respected educational establishment in Kisumu County, Kenya.<br><br>
         The school has had several principals: Mr. Omoso Meshack Wasonga (2009-2016), Madam Dinah A. Oboro (2017-2021), and current principal <strong>Mr. Oguta Kennedy Odhiambo (since 2022)</strong>.<br><br>
-        <em>Over 16 years, it has expanded from humble beginnings to include modern classrooms, science laboratories, a library, computer lab, and various clubs and societies.<em>`;
+        <em>Over 16 years, it has expanded from humble beginnings to include modern classrooms, science laboratories, computer lab, and various clubs and societies.<em>`;
 
         let typewriterIndex = 0;
         let isTypewritingComplete = false;
