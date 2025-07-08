@@ -168,7 +168,7 @@ def initiate_mpesa_payment(phone, amount, account_ref, transaction_desc):
         return {'success': False, 'message': f'Request failed: {str(e)}'}
 
 # Routes
-@app.route('/', method=['GET', 'HEAD'])
+@app.route('/', methods=['GET', 'HEAD'])
 def index():
     """Display the main page with announcements"""
 
