@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_from_directory
 import json
 import os
 import requests
@@ -28,6 +28,7 @@ MPESA_CONSUMER_SECRET = os.environ.get('MPESA_CONSUMER_SECRET')
 MPESA_SHORTCODE = os.environ.get('MPESA_SHORTCODE')
 MPESA_PASSKEY = os.environ.get('MPESA_PASSKEY')
 MPESA_CALLBACK_URL = os.environ.get('MPESA_CALLBACK_URL')
+ACCOUNT_REFERENCE = os.environ.get('ACCOUNT_REFERENCE')
 
 # Admin credentials
 ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
@@ -155,7 +156,8 @@ def initiate_mpesa_payment(phone, amount, account_ref, transaction_desc):
         'PartyB': MPESA_SHORTCODE,
         'PhoneNumber': phone,
         'CallBackURL': MPESA_CALLBACK_URL,
-        'AccountReference': account_ref,
+        'AccountReference': ACCOUNT_REFERENCE,
+        'TransactionType': 'CustomerPayBillOnline',
         'TransactionDesc': transaction_desc
     }
     
@@ -942,6 +944,13 @@ def get_alumni_list():
         })
     except Exception as e:
         return jsonify({'error': 'Failed to retrieve alumni data'}), 500
+
+from flask import send_from_directory
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(directory='static', filename='sitemap.xml', mimetype='application/xml')
+
 
 @app.route('/health', methods=['GET'])
 def health_check():
