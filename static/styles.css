@@ -177,7 +177,8 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+      background-image: url('/static/images/hero.jpg');
+      /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); */
       color: white;
       padding: 30px 30px 50px 30px;
       text-align: center;
