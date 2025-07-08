@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response
 import os
+import json
 import requests
 import base64
 from datetime import datetime
@@ -167,9 +168,12 @@ def initiate_mpesa_payment(phone, amount, account_ref, transaction_desc):
         return {'success': False, 'message': f'Request failed: {str(e)}'}
 
 # Routes
-@app.route('/')
+@app.route('/', method=['GET', 'HEAD'])
 def index():
     """Display the main page with announcements"""
+
+    if request.method == 'HEAD':
+        return '', 200
     announcements = load_announcements()
     return render_template('index.html', announcements=announcements)
 
