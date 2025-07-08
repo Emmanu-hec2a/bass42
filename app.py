@@ -949,8 +949,13 @@ from flask import send_from_directory
 
 @app.route('/sitemap.xml')
 def sitemap():
-    return send_from_directory(directory='static', filename='sitemap.xml', mimetype='application/xml')
-
+    try:
+        path = os.path.join(app.root_path, 'static')
+        print("Serving sitemap from:", path)
+        return send_from_directory(path, 'sitemap.xml', mimetype='application/xml')
+    except Exception as e:
+        print("Error serving sitemap:", str(e))
+        return "Internal Server Error", 500
 
 @app.route('/health', methods=['GET'])
 def health_check():
