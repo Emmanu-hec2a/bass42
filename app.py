@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, send_from_directory
-import json
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response
 import os
 import requests
 import base64
@@ -945,17 +944,19 @@ def get_alumni_list():
     except Exception as e:
         return jsonify({'error': 'Failed to retrieve alumni data'}), 500
 
-from flask import send_from_directory
-
-@app.route('/sitemap.xml')
+#Sitemap route
+@app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
-    try:
-        path = os.path.join(app.root_path, 'static')
-        print("Serving sitemap from:", path)
-        return send_from_directory(path, 'sitemap.xml', mimetype='application/xml')
-    except Exception as e:
-        print("Error serving sitemap:", str(e))
-        return "Internal Server Error", 500
+    sitemap_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://bass-uzzi.onrender.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>'''
+    
+    return Response(sitemap_xml, mimetype='application/xml')
 
 @app.route('/health', methods=['GET'])
 def health_check():
