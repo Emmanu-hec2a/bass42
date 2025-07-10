@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response, send_from_directory, make_response
 import os
 import json
 import requests
@@ -952,7 +952,7 @@ def get_alumni_list():
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     sitemap_xml = '''<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://bass-uzzi.onrender.com/</loc>
     <changefreq>weekly</changefreq>
@@ -960,7 +960,9 @@ def sitemap():
   </url>
 </urlset>'''
     
-    return Response(sitemap_xml, mimetype='application/xml')
+    response = make_response(sitemap_xml)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 
 @app.route('/robots.txt', methods=['GET'])
 def robots_txt():
