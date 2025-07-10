@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, Response, send_from_directory
 import os
 import json
 import requests
@@ -961,6 +961,11 @@ def sitemap():
 </urlset>'''
     
     return Response(sitemap_xml, mimetype='application/xml')
+
+@app.route('/robots.txt', methods=['GET'])
+def robots_txt():
+    """Robots.txt file to allow all crawlers"""
+    return send_from_directory(app.root_path, 'robots.txt')
 
 @app.route('/health', methods=['GET'])
 def health_check():
