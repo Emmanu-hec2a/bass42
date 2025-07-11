@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://bass-uzzi.onrender.com/sitemap.xml
+Sitemap: https://bishopabieroshaurimoyo.com/sitemap.xml
 
